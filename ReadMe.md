@@ -2,11 +2,17 @@ This python script formats the shellcode that is created by msfvenom.
 
 It only works on the shellcode that looks like.
 
-"\xfc\x48\x83\xe4\xf0\xe8\xc0\x00\x00\x00\x41\x51\x41\x50"
-"\x52\x51\x56\x48\x31\xd2\x65\x48\x8b\x52\x60\x48\x8b\x52"
-"\x18\x48\x8b\x52\x20\x48\x8b\x72\x50\x48\x0f\xb7\x4a\x4a"
+```
+"\x4d\x72\x20\x50\x6f\x6f\x70\x79\x42\x75\x74\x68\x6f\x6c\x65\x0a"
+"\x4d\x72\x20\x50\x6f\x6f\x70\x79\x42\x75\x74\x68\x6f\x6c\x65\x0a"
+"\x4d\x72\x20\x50\x6f\x6f\x70\x79\x42\x75"
+```
 
-
-
-
-The output will be 
+The output will be
+```
+unsigned char rawShellcode[] = {
+	0x4d, 0x72, 0x20, 0x50, 0x6f, 0x6f, 0x70, 0x79, 0x42, 0x75, 0x74, 0x68, 0x6f, 0x6c, 0x65, 0x0a,
+	0x4d, 0x72, 0x20, 0x50, 0x6f, 0x6f, 0x70, 0x79, 0x42, 0x75, 0x74, 0x68, 0x6f, 0x6c, 0x65, 0x0a,
+	0x4d, 0x72, 0x20, 0x50, 0x6f, 0x6f, 0x70, 0x79, 0x42, 0x75
+};
+```
