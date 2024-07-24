@@ -19,3 +19,10 @@ unsigned char rawShellcode[] = {
 	0x4d, 0x72, 0x20, 0x50, 0x6f, 0x6f, 0x70, 0x79, 0x42, 0x75
 };
 ```
+
+Or you could just do this command on the bin file lol.
+'calc.bin' is used for example
+```
+echo  "unsigned char NcPayload[] = {"
+xxd -p calc.bin | tr -d '\n' | sed 's/\(..\)/0x\1, /g' | fold -w 108 | sed 's/^/    /' | sed '$ s/, $//; $ a\};'
+```
