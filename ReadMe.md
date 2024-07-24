@@ -23,6 +23,6 @@ unsigned char rawShellcode[] = {
 Or you could just do this command on the bin file lol.
 'calc.bin' is used for example
 ```
-echo  "unsigned char NcPayload[] = {"
+echo  "unsigned char buf[] = {"
 xxd -p calc.bin | tr -d '\n' | sed 's/\(..\)/0x\1, /g' | fold -w 108 | sed 's/^/    /' | sed '$ s/, $//; $ a\};'
 ```
