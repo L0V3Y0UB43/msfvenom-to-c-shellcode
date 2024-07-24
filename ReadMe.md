@@ -1,6 +1,8 @@
 This python script formats the shellcode that is created by 'msfvenom -f c'.
 as 'msfvenom -p windows/x64/exec CMD=calc.exe -f c' creates shellcode like this 
 
+btw both shellcodes are the same if the c compiler has compiled it.
+its just for the human eye.
 ```
 "\x4d\x72\x20\x50\x6f\x6f\x70\x79\x42\x75\x74\x68\x6f\x6c\x65\x0a"
 "\x4d\x72\x20\x50\x6f\x6f\x70\x79\x42\x75\x74\x68\x6f\x6c\x65\x0a"
